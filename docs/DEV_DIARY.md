@@ -21,5 +21,22 @@ The AI proposed a structured implementation plan, breaking the project into logi
 
 ![Project Tasks](./project-tasks.png)
 
----
-*This document will be updated as the project evolves.*
+
+## Phase 2: Backend Core Implementation
+
+With the plan in place, we moved to building the backend foundation using **FastAPI**.
+
+### Key Decisions
+- **Database**: We opted for **SQLite** (via `aiosqlite`) for the MVP to keep local development frictionless, avoiding the need for Docker at this stage. The code uses **SQLModel**, making it easy to switch to PostgreSQL later.
+- **Authentication**: Implemented a standard JWT-based flow (`OAuth2PasswordBearer`).
+- **Structure**: Adopted a clean, modular structure:
+  - `app/models`: Pydantic and SQLModel definitions.
+  - `app/api`: Route handlers.
+  - `app/core`: Configuration and security logic.
+
+### Progress
+- [x] **Log Ingestion**: `POST /api/v1/logs/ingest` is live. It accepts JSON logs, validates them, and stores them asynchronously.
+- [x] **Auth**: `POST /api/v1/auth/token` provides access tokens for secure endpoints.
+
+We are now ready to build the **Detection Engine** on top of this solid foundation.
+
