@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.api.endpoints import logs, auth
+from app.api.endpoints import logs, auth, rules, alerts
 from app.core.db import init_db
 
 app = FastAPI(title="Atomic SIEM API", version="0.1.0")
@@ -10,6 +10,8 @@ async def on_startup():
 
 app.include_router(auth.router, prefix="/api/v1/auth", tags=["auth"])
 app.include_router(logs.router, prefix="/api/v1/logs", tags=["logs"])
+app.include_router(rules.router, prefix="/api/v1/rules", tags=["rules"])
+app.include_router(alerts.router, prefix="/api/v1/alerts", tags=["alerts"])
 
 @app.get("/")
 def read_root():

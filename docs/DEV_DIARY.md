@@ -40,3 +40,17 @@ With the plan in place, we moved to building the backend foundation using **Fast
 
 We are now ready to build the **Detection Engine** on top of this solid foundation.
 
+## Phase 3: Detection Engine
+
+We moved to the core value proposition: **Detection**.
+
+### Architecture
+- **Rule Engine**: Implemented a JSON-based rule logic stored in the database.
+- **Real-time Evaluation**: Used FastAPI `BackgroundTasks` to evaluate logs immediately after ingestion.
+- **Alerting**: Matches generate `Alert` records for triage.
+
+### Progress
+- [x] **Models**: Created `Rule` and `Alert` SQLModel classes.
+- [x] **Service**: Implemented `evaluate_log` logic supporting `eq` and `contains` operators.
+- [x] **API**: Added CRUD endpoints for Rules and Alerts.
+- [x] **Verification**: Validated the flow with `backend/tests/verify_detection.py`.
