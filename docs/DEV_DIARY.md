@@ -54,3 +54,24 @@ We moved to the core value proposition: **Detection**.
 - [x] **Service**: Implemented `evaluate_log` logic supporting `eq` and `contains` operators.
 - [x] **API**: Added CRUD endpoints for Rules and Alerts.
 - [x] **Verification**: Validated the flow with `backend/tests/verify_detection.py`.
+
+## Phase 4: Frontend Dashboard
+
+We built the user interface using **React** and **Vite**, styled with **TailwindCSS (v4)**.
+
+### Key Features
+- **Dashboard**: Overview of system status.
+- **Logs Viewer**: Real-time table of ingested logs with severity highlighting.
+- **Alerts Management**: Interface to view and resolve security alerts.
+- **Rules Editor**: Form to create and manage detection rules.
+
+### Tech Stack Choices
+- **React Query**: Used for efficient server state management and polling.
+- **Lucide React**: For consistent and clean iconography.
+- **Yarn**: Switched to Yarn for better dependency management in the frontend.
+
+### Progress
+- [x] **Setup**: Initialized Vite project with TypeScript.
+- [x] **Layout**: Implemented a responsive sidebar layout.
+- [x] **Pages**: Built Logs, Alerts, and Rules pages connected to the backend API.
+- [x] **Polish**: Aligned UI elements and updated versioning to `v0.2.3`.

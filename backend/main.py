@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from app.api.endpoints import logs, auth, rules, alerts
 from app.core.db import init_db
 
-app = FastAPI(title="Atomic SIEM API", version="0.1.0")
+app = FastAPI(title="Atomic SIEM API", version="0.2.3")
 
 @app.on_event("startup")
 async def on_startup():
